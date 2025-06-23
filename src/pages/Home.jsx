@@ -16,10 +16,12 @@ import {
   Menu,
   X
 } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const { isAuthenticated } = useAuth();
 
   const testimonials = [
     {
@@ -56,7 +58,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
           <div className="flex items-center space-x-3">
             <img
-              src="src\assets\logo.png" // update this path
+              src="src\assets\logo.png"
               alt="Logo"
               className="w-10 h-10 rounded-xl object-cover"
             />
@@ -71,10 +73,19 @@ export default function Home() {
             <a href="#how-it-works" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">How It Works</a>
             <a href="#testimonials" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Reviews</a>
             <a href="#contact" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Contact</a>
-            <Link to="/login"><Button variant="outline" className="border-gray-300 hover:border-blue-500">Login</Button></Link>
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
-              Get Started
-            </Button>
+            {!isAuthenticated ? (
+              <>
+                <Link to="/login"><Button variant="outline" className="border-gray-300 hover:border-blue-500">Login</Button></Link>
+                <Link to="/signup"><Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">Get Started</Button></Link>
+              </>
+            ) : (
+              <Link to="/dashboard">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                  Go to Dashboard
+                </Button>
+              </Link>
+            )}
+
           </nav>
 
           {/* Mobile Menu Button */}
@@ -94,8 +105,14 @@ export default function Home() {
             <a href="#testimonials" className="block text-gray-700 hover:text-blue-600 font-medium">Reviews</a>
             <a href="#contact" className="block text-gray-700 hover:text-blue-600 font-medium">Contact</a>
             <div className="flex flex-col space-y-2 pt-4 border-t border-gray-100">
-              <Button variant="outline" className="w-full" element="/login">Login</Button>
-              <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600">Get Started</Button>
+              {!isAuthenticated ? (
+                <>
+                  <Link to="/login"><Button variant="outline" className="w-full">Login</Button></Link>
+                  <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600">Get Started</Button>
+                </>
+              ) : (
+                <Link to="/dashboard"><Button className="w-full bg-blue-600 text-white">Go to Dashboard</Button></Link>
+              )}
             </div>
           </div>
         )}
@@ -127,12 +144,13 @@ export default function Home() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold"
-                >
-                  Start Free Trial <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                <Link to={"/signup"}><Button 
+                    size="lg" 
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold"
+                  >
+                    Get Started Free <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
                 <Button 
                   size="lg" 
                   variant="outline" 

@@ -121,7 +121,7 @@ export default function Login() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent"
                     placeholder="you@example.com"
                   />
                 </div>
@@ -136,7 +136,7 @@ export default function Login() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent"
                     placeholder="••••••••"
                   />
                 </div>
@@ -177,7 +177,7 @@ export default function Login() {
         </div>
       </div>
       {showResetModal && (
-        <div className="fixed inset-0 z-50 bg-opacity-01 backdrop-blur-lg shadow-xl flex items-center justify-center px-4">
+        <div className="fixed inset-0 z-50 bg-black/70 shadow-xl flex items-center justify-center px-4">
           <div className="bg-white w-full max-w-md p-6 rounded-lg shadow-lg relative">
             <button onClick={() => setShowResetModal(false)} className="absolute right-4 top-4 text-gray-400 hover:text-gray-600 text-xl">&times;</button>
             
@@ -194,7 +194,7 @@ export default function Login() {
                     value={resetEmail}
                     onChange={(e) => setResetEmail(e.target.value)}
                     required
-                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent"
                     placeholder="Enter your registered email address"
                   />
                 </div>
@@ -229,7 +229,7 @@ export default function Login() {
                     value={otp}
                     onChange={(e) => setOtp(e.target.value)}
                     required
-                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent"
                     placeholder="Enter 6 digit OTP sent to your email"
                   />
                 </div>
@@ -263,7 +263,7 @@ export default function Login() {
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
                     required
-                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent"
                     placeholder="Enter your new password"
                   />
                 </div>

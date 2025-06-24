@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import Layout from './layout/Layout';
+import Employees from './pages/Employees';
 
 function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth();
@@ -30,7 +31,7 @@ function App() {
         }
       >
         <Route path="dashboard" element={<Dashboard />} />
-        {/* Add more nested protected routes here */}
+        <Route path="employees" element={<Employees />} />
       </Route>
     </Routes>
   );

@@ -521,19 +521,19 @@ export default function Employees() {
                   <table className="w-full">
                     <thead className="bg-gradient-to-r from-indigo-100 to-blue-100">
                       <tr>
-                        <th className="text-left p-6 font-semibold text-indigo-800 ">Employee</th>
-                        <th className="text-left p-6 font-semibold text-indigo-800">Email</th>
-                        <th className="text-left p-6 font-semibold text-indigo-800">Phone</th>
-                        <th className="text-left p-6 font-semibold text-indigo-800">Role</th>
-                        <th className="text-left p-6 font-semibold text-indigo-800">Hours</th>
-                        <th className="text-left p-6 font-semibold text-indigo-800">Status</th>
-                        <th className="text-right p-6 font-semibold text-indigo-800">Actions</th>
+                        <th className="text-left py-4 px-6 font-semibold text-indigo-800 ">Employee</th>
+                        <th className="text-left py-4 px-6 font-semibold text-indigo-800">Email</th>
+                        <th className="text-left py-4 px-6 font-semibold text-indigo-800">Phone</th>
+                        <th className="text-left py-4 px-6 font-semibold text-indigo-800">Role</th>
+                        <th className="text-left py-4 px-6 font-semibold text-indigo-800">Hours</th>
+                        <th className="text-left py-4 px-6 font-semibold text-indigo-800">Status</th>
+                        <th className="text-right py-4 px-6 font-semibold text-indigo-800">Actions</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100">
                       {currentData.map(emp => (
                         <tr key={emp.id} className="hover:bg-gray-50 transition-colors">
-                          <td className="p-6">
+                          <td className="py-4 px-6">
                             <div className="flex items-center">
                               <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-sm mr-4">
                                 {emp.fullName.split(' ').map(n => n[0]).join('').toUpperCase()}
@@ -543,21 +543,21 @@ export default function Employees() {
                               </div>
                             </div>
                           </td>
-                          <td className="p-6">
+                          <td className="py-4 px-6">
                             <div className="text-gray-900">{emp.email}</div>
                           </td>
-                          <td className="p-6">
+                          <td className="py-4 px-6">
                             <div className="text-gray-900">{emp.phone}</div>
                           </td>
-                          <td className="p-6">
+                          <td className="py-4 px-6">
                             <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
                               {emp.role}
                             </span>
                           </td>
-                          <td className="p-6">
-                            <span className="text-gray-900 font-medium">{emp.maxWeeklyHours}h/week</span>
+                          <td className="py-4 px-6">
+                            <span className="text-gray-900 font-regular">{emp.maxWeeklyHours}h/week</span>
                           </td>
-                          <td className="p-6">
+                          <td className="py-4 px-6">
                             <div className="flex items-center gap-3">
                               <ToggleSwitch
                                 checked={emp.isActive}
@@ -570,7 +570,7 @@ export default function Employees() {
                               </span>
                             </div>
                           </td>
-                          <td className="p-6">
+                          <td className="py-4 px-6">
                             <div className="flex items-center justify-end gap-2">
                               <button 
                                 onClick={() => openEditModal(emp)}

@@ -85,7 +85,7 @@ export default function Dashboard() {
               </div>
               
               {/* Employee List */}
-              <ul className="divide-y divide-gray-100">
+              <ul className="divide-y divide-gray-100 max-h-70 overflow-y-auto">
                 {summary.idleEmployees.map(emp => (
                   <li key={emp.id} className="py-3 grid grid-cols-2 gap-4">
                     <span className="font-medium text-gray-700">{emp.fullName}</span>
@@ -112,7 +112,7 @@ export default function Dashboard() {
               </div>
               
               {/* Shifts List */}
-              <ul className="divide-y divide-gray-100">
+              <ul className="divide-y divide-gray-100 max-h-70 overflow-y-auto">
                 {summary.upcomingShifts.map((shift, index) => (
                   <li key={index} className="py-3 grid grid-cols-3 gap-4">
                     <span className="font-medium text-gray-700">

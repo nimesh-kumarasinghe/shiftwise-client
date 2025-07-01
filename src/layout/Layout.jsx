@@ -8,8 +8,8 @@ const navItems = [
   { name: 'Home', path: '/', icon: Home},
   { name: 'Employees', path: '/employees', icon: Users },
   { name: 'Shifts', path: '/shifts', icon: Clock },
-  { name: 'Reports', path: '/reports', icon: FileText },
-  { name: 'Settings', path: '/settings', icon: Settings },
+  // { name: 'Reports', path: '/reports', icon: FileText },
+  // { name: 'Settings', path: '/settings', icon: Settings },
 ];
 
 export default function Layout() {

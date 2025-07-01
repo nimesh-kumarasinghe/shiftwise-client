@@ -1,18 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from '../api/axios';
 import { useNavigate } from 'react-router-dom';
-import countries from '../data/countries.json';
+//import countries from '../data/countries.json';
 import timezones from '../data/timezones.json';
 import { Mail, Lock, Map, Clock, User } from 'lucide-react';
 
 export default function Signup() {
   const [organizationName, setOrganizationName] = useState('');
   const [countryCode, setCountryCode] = useState('');
+  const [countries, setCountries] = useState([]);
   const [timeZone, setTimeZone] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const [passwordError, setPasswordError] = useState('');
+
+  const apiKey = import.meta.env.VITE_CALENDARIFIC_API_KEY;
+
+  useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        const res = await axios.get(`https://calendarific.com/api/v2/countries?api_key=${apiKey}`);
+        setCountries(res.data.response.countries);
+      } catch (err) {
+        console.error('Failed to fetch countries', err);
+      }
+    };
+    fetchCountries();
+  }, []);
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -112,8 +127,10 @@ export default function Signup() {
                     required
                   >
                     <option value="">-- Select Country --</option>
-                    {countries.map((c) => (
-                      <option key={c.code} value={c.code}>{c.name}</option>
+                    {countries.map(c => (
+                    <option key={c['iso-3166']} value={c['iso-3166']}>
+                      {c.country_name}
+                    </option>
                     ))}
                   </select>
                 </div>

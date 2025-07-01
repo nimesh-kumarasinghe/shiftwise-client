@@ -7,6 +7,8 @@ import Dashboard from './pages/Dashboard';
 import Layout from './layout/Layout';
 import Employees from './pages/Employees';
 import Shifts from './pages/Shifts';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
 
 function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth();
@@ -21,6 +23,8 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/terms" element={<Terms />} />
+      <Route path="/privacy" element={<Privacy />} />
 
       {/* Protected Routes */}
       <Route

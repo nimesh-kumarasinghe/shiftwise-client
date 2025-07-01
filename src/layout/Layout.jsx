@@ -1,14 +1,16 @@
 import { useState } from 'react';
-import { Menu, X, BarChart3, Users, Clock, FileText, Settings, LogOut  } from 'lucide-react';
+import { Menu, X, BarChart3, Users, Clock, FileText, Settings, LogOut, Home, Calendar  } from 'lucide-react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 const navItems = [
   { name: 'Dashboard', path: '/dashboard', icon: BarChart3 },
+  { name: 'Home', path: '/', icon: Home},
   { name: 'Employees', path: '/employees', icon: Users },
   { name: 'Shifts', path: '/shifts', icon: Clock },
-  { name: 'Reports', path: '/reports', icon: FileText },
-  { name: 'Settings', path: '/settings', icon: Settings },
+  { name: 'Calendar', path: '/calendars', icon: Calendar },
+  // { name: 'Reports', path: '/reports', icon: FileText },
+  // { name: 'Settings', path: '/settings', icon: Settings },
 ];
 
 export default function Layout() {

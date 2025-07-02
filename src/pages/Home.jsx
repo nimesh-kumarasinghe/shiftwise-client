@@ -15,7 +15,8 @@ import {
   Star,
   Menu,
   X,
-  Rocket
+  Rocket,
+  CalendarCheck
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
@@ -89,15 +90,15 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden">
+      <section className="relative py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden mt-10">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <div className="mt-5 inline-flex items-center space-x-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              {/* <div className="mt-5 inline-flex items-center space-x-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Sparkles className="w-4 h-4" />
                 <span>AI-Powered Scheduling</span>
-              </div>
+              </div> */}
               
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -110,7 +111,7 @@ export default function Home() {
               </h1>
               
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Transform your workforce scheduling with AI-powered automation. Create, assign, and track employee shifts effortlessly while reducing conflicts and boosting productivity by up to 40%.
+                Transform your workforce scheduling with easy steps. Create, assign, and track employee shifts effortlessly while reducing conflicts and boosting productivity by up to 40%.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -197,12 +198,12 @@ export default function Home() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <FeatureCard 
+            {/* <FeatureCard 
               icon={<Calendar className="w-8 h-8" />}
               title="Smart Shift Scheduling" 
               desc="AI-powered scheduling that automatically generates optimal shift plans, handles multi-day ranges, and intelligently skips weekends based on your business needs."
               gradient="from-blue-500 to-cyan-500"
-            />
+            /> */}
             <FeatureCard 
               icon={<Users className="w-8 h-8" />}
               title="Intelligent Employee Assignment" 
@@ -220,6 +221,12 @@ export default function Home() {
               title="Real-time Dashboard" 
               desc="Track shift statistics, identify idle employees, monitor weekly loads, and get actionable insights to optimize your workforce."
               gradient="from-orange-500 to-red-500"
+            />
+            <FeatureCard 
+              icon={<CalendarCheck className="w-8 h-8" />}
+              title="Global Holiday Calendars" 
+              desc="Select your country and automatically view national holidays directly in your shift planner. Simplify scheduling with local awareness."
+              gradient="from-yellow-500 to-orange-500"
             />
             <FeatureCard 
               icon={<Shield className="w-8 h-8" />}

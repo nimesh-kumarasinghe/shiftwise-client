@@ -1,12 +1,38 @@
-# React + Vite
+# 🌐 ShiftWise - Frontend App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend UI for **ShiftWise** — a smart employee shift scheduling platform.  
+Built with **React + Vite + Tailwind CSS**, it provides a modern, responsive user experience for managing shifts, employees, and organizations.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- Beautiful landing page with smooth animations  
+- Secure login & signup with JWT support  
+- Dashboard with shift statistics & analytics  
+- Employee management with filters and bulk add  
+- Shift creation, assignment, PDF export, and email notifications  
+- Integrated public holiday calendar by country  
+- Mobile-friendly layout with collapsible sidebar
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠 Tech Stack
+
+- [React](https://react.dev/) (with Vite)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React Router](https://reactrouter.com/)
+- [Axios](https://axios-http.com/)
+- [Lucide Icons](https://lucide.dev/)
+- Backend: ASP.NET Core Web API
+
+---
+
+## ▶️ Getting Started
+
+1. Clone the repository  
+2. Install dependencies:
+
+```bash
+npm install
+
